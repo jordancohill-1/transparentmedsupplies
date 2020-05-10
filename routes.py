@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, session
-from solcx import compile_source, compile_files, link_code
+from solcx import install_solc, compile_source, compile_files, link_code
 from web3 import Web3
 from web3.contract import ConciseContract
 import json
