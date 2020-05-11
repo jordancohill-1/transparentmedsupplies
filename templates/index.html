@@ -13,64 +13,40 @@
           </button>
         </div>
 
-   
     
       </div>
     </div>
   </div>
-    <div class="row" style="margin-top: 100px; width: 75%; padding-left: 300px ">
-            <div class="col">
-             
-                    <table class="table table-bordered">
-                        <thead>
-                          <h2 style="text-align: center;" >Add to Supply</h2>
-                        <tr>
-                            <th>Vendor Name</th>
-                            <th>Quantity</th>
-                            <th></th>
-                        </tr>
-                        <tr>
-                          <td><input type="text" name="Vendorbox"></td>
-                          <td><input type="text" name="Quantitybox"></td>
-                          <td><input type="button" name="button" class="button" value=Add2BlockChain onclick="location.reload()"></td>
-                        </tr>
-                      </thead>
-                    </table>
-                  </div>
-                </div>
-              </div>
+
 
   <div class="row"  style="margin-top: 100px; width: 75%; padding-left: 300px">
             <div class="col">
-                <div class="table-responsive">
-
-                    <table class="table table-bordered">
+                     <table class="table table-bordered" style="text-align: center;" >
                         <thead >
-                           <h2 style="text-align: center;" >Available Assets</h2>
+                           <h2 style="text-align: center;" >Supply</h2>
                         <tr>
-                            <th>Vendors</th>
-                            <th>Quantity</th>
+                            <th >{{ supply }}</th>
+   
 
                         </tr>
                         </thead>
                         <tbody>
                         
-                        {% for seller in data %}
-        
-                            <tr>
-                                <td>{{ seller.name}}</td>
-                                <td>{{ seller.quantity}}</td>
-                            </tr>
-                     
-                        {% endfor %}
-
-
                       
                         </tbody>
+                        <tfoot>
+                         
+                        </tfoot>
                     </table>
+          
                 </div>
             </div>
+            <br />
+             <h3 style="text-align: center;">Please See About for description and demo</h3>
         </div>
+
+        
+
 
 
 

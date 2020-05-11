@@ -23,6 +23,7 @@ eth-tester==0.2.0b2
 eth-typing==2.2.1
 eth-utils==1.8.4
 Flask==1.1.2
+Flask-WTF==0.14.3
 gunicorn==20.0.4
 hexbytes==0.2.0
 idna==2.9
@@ -93,4 +94,5 @@ webencodings==0.5.1
 websockets==8.1
 Werkzeug==1.0.1
 widgetsnbextension==3.5.1
+WTForms==2.3.1
 zipp==3.1.0

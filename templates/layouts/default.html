@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Transparent Med Supplies</title>
+    <title>Med Supplies </title>
     <meta charset="utf-8">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicons/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicons/favicon-32x32.png')}}">
@@ -17,10 +17,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
-    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
     {% block header %}
     {% endblock %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+  
   </head>
 
   <body>

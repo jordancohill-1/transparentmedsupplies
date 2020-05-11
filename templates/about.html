@@ -4,35 +4,84 @@
 <div class="container container-thin">
   <div class="row">
     <div class="col">
+      <br />
+      <br />
+  
+  <br />
+  
+  <br />
+  
+  <br />
+  
+  <br />
+  
   
 
-          <h1>HERE'S HOW WE DID IT!</h1>
+          <h1>TRANSPARENCY FOR MEDICAL SUPPLIES</h1>
           <div>	
-          <h2>POSTER SCRAPING</h2>
-          <p> With help from the following repository,
-            <a href='https://github.com/sundeepblue/movie_rating_prediction'>movie_rating_prediction</a>,
-            about 5000 posters with corresponding movie data were scraped from a list of movie titles
-            at <a href='www.the-numbers.com'>The Numbers</a>.
+          <h2>BACKGROUND</h2>
+          <p> 
+            Since COVID-19 has hit the US, medical supplies and devices have been in high demand. There has been much uncertainty about what medical supplies are readily available. This project aims to provide trust between the nation's suppliers and their buyers by creating a product specific network which allows everyone in the network to see the surplus or demand for a product. Using data analysis to create algorithms for demand of a product would also decrease the nation's dependency on the government to mandate production. By implementing a blockchain solution to this problem, along with RFID technology to scan each product into the surplus, the network can be certain on the availability of product.
+          </p>
+          
+          <h2>CONTRACT</h2>
+          <p>
+            contract sellerContract{<br />
+            //init seller<br />
+            struct Seller{<br />
+              string name;<br />
+              uint quantity;<br />
+            }<br />
+
+            uint private supply;<br />
+
+            //declare seller obj<br />
+            Seller public seller_obj;<br />
+            Seller[] public sellers;<br />
+            <br />
+
+            //GET <br />
+            function getSeller() public view returns (string memory, uint) {<br /> 
+                return (seller_obj.name, seller_obj.quantity);<br />
+            }<br />
+
+            <br />
+            //SET <br />
+            function setSeller(string memory name, uint quantity) public {<br />
+                seller_obj = Seller({name:name, quantity: quantity});<br />
+                supply = supply + quantity;<br />
+            }<br />
+              <br />
+            //GET SUPPLY<br />
+            function getSupply() public returns (uint){<br />
+              return supply;<br />
+            }<br />
+              //REMOVE FROM SUPPLY<br />
+              function remove(string memory name, uint quantity) public {<br />
+                seller_obj = Seller({name:name, quantity: quantity});<br />
+                supply = supply - quantity;<br />
+            }<br />
+
+          }<br />
+
           </p>
 
-          <h2>QUANTIZATION AND DOMINANT COLORS</h2>
-         <p>
-          Using Python's OpenCV library, movie posters were quantized into 4 clusters.
-          From there, the quantized images were explored with the ColorThief library 
-          to identify the dominant colors.
-      	</p>
-          <h2>TRAIN TEST</h2>
+          <h2>HOW IT WORKS</h2>
           <p>
-           Once the dominant colors were identified, a train test algorithm was created with the
-           SKLearn library to predict a movie's IMDB rating from the dominant colors in it's poster.
+            From the "Home" page the supply of a specific medical item is shown.(getSupply()) 
+            A supplier can then navigate to the "Add" page to add to the supply.(setSeller()) This prototypes the scanning of RFID chips into the blockchain. To remove from the supply, a supplier can navigate to "Remove". This prototypes the selling of the items where an RFID scannig would remove the items from the supply.
+          </p>
+
+
+          <h2>STAKEHOLDERS</h2>
+         <p>
+           Hospitals and manufacturers would benefit from this implementation. Knowing how much of a product is available lets a hospital know whether they can obtain the product quickly or if they need to demand more be made. The solution also benefits manufacturers as they can know when to slow production. From a higher level, the nation's people and government will also benefit from this as they can trust products are being produced at a necessary rate to keep hospitals stocked as necessary.
          </p>
-          <h2>FACIAL DETECTION AND RECOGNITION</h2>
-          <p>As an added bonus we used the
-            <a href="https://github.com/ageitgey/face_recognition">facial_recognition</a> library to find
-            and identify faces. A pre-trained Convolutional Neural Network (CNN) identifies
-            faces in the poster. These faces are then compared to the faces of 100 actors, stored in
-            the database. If we found possible matches, each face would be compared to the face in
-            the poster and the one with the smallest euclidian distance would be chosen.</p>
+      
+          <h2>THE LAST MILE</h2>
+          <p>
+            The last mile problem in this project is verifying the number of products in the surplus. While RFID scanning helps to eliminate entering duplicates to the surplus, there is nothing in place to evaluate whether the product is whole or if the manufacturer is just scanning RFID chips not associated to the product. One possible solution to this problem is validating a picture of the product along with the RFID scanning before it is added to the surplus. This solution still has problems as image processing cannot identify whether or a not a product works as intended but it does help verify that a product is in the surplus, broken or unbroken.
+          </p>
        </div>
 
 
